@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hacker Voice Effect</title>
+<style>
+    body {
+        background: black;
+        color: #00ff00;
+        font-family: "Courier New", monospace;
+        font-size: 30px;
+        text-align: center;
+        margin-top: 100px;
+    }
+    .hack {
+        animation: glow  infinite alternate;
+    }
+    @keyframes glow {
+        from { text-shadow: 0 0 5px #00ff00; }
+        to   { text-shadow: 0 0 20px #00ff00; }
+    }
+</style>
+</head>
+<body>
+
+<div id="text" class="hack"></div>
+
+<!-- Add your audio file here -->
+<audio id="voice" src="VOICE.MP3 (2).mpeg"></audio>
+
+<script>
+let message = "KYA HUI";
+let box = document.getElementById("text");
+let voice = document.getElementById("voice");
+
+setInterval(() => {
+    // Add text again and again
+    box.innerHTML += message;
+
+    // Play voice
+    voice.currentTime = 0;
+    voice.play();
+
+}, 1000); // 1 second speed
+</script>
+
+</body>
+</html>
